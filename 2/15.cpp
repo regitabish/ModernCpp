@@ -31,7 +31,7 @@ public:
 
     // コピー代入演算子
     ipv4& operator=(ipv4 const& other) noexcept {
-        if (this != &other) {
+        if (this != &other) {//自己代入チェック
             data = other.data;
         }
         return *this;
