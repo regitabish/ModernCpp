@@ -6,11 +6,15 @@
 
 template<typename T>
 T minimum(T const a, T const b){
+    std::cout << "call minimum(a,b)"<< std::endl;
+    std::cout << a << " "<< b << std::endl;
     return a<b ? a:b;
 }
 
 template<typename T1, typename... T>
 T1 minimum(T1 a, T... args){
+    std::cout << "call minimum(T1 a, T... args)"<< std::endl;
+    std::cout << "a;" << a << std::endl;
     return minimum(a,minimum(args...));
 }
 
@@ -18,3 +22,7 @@ int main(){
     auto x = minimum(5,4,3,2,1,0,-1);
     std::cout << x << std::endl;
 }
+
+//可変数テンプレートの使い方の一例
+//minimum(args...)のようによびだすと
+//argsのなかみを自動的にaとそれ以外に振り分けることができる
